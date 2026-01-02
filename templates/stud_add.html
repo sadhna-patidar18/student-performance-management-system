@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Student Performance Management System</h1>
+    <p>Enter student details and subject-wise marks</p>
+</header>
+
+<main>
+    <form method="POST" action="/add" class="form-box">
+
+        <h2>Student Details</h2>
+
+        <div class="form-group">
+            <label>Student Name</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Roll Number</label>
+            <input type="number" name="roll" required>
+        </div>
+
+        <h2>Subject-wise Marks</h2>
+
+        <div class="form-group">
+            <label>Maths</label>
+            <input type="number" name="maths" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label>Physics</label>
+            <input type="number" name="physics" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label>Chemistry</label>
+            <input type="number" name="chemistry" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label>English</label>
+            <input type="number" name="english" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label>Computer</label>
+            <input type="number" name="computer" min="0" max="100" required>
+        </div>
+
+        <button type="submit">Submit Record</button>
+
+    </form>
+</main>
+
+</body>
+</html>

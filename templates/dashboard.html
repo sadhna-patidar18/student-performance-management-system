@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Results Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Student Results Dashboard</h1>
+    <p>Overview of student performance</p>
+</header>
+
+<main>
+    <table class="result-table">
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Total</th>
+                <th>Percentage</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for s in students %}
+            <tr>
+                <td>{{ s.roll }}</td>
+                <td>{{ s.name }}</td>
+                <td>{{ s.total }}</td>
+                <td>{{ s.percentage }}%</td>
+                <td class="{% if s.result == 'PASS' %}pass{% else %}fail{% endif %}">
+                    {{ s.result }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>
